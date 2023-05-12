@@ -59,5 +59,6 @@ if __name__ == '__main__':
   app.run(host = '0.0.0.0', debug=True) # we need to give a host address 
 # if we add 0.0.0.0 it runs in local environent 
 
+# Flask and gunicorn-- a development based server which is not used for production ,are added into requirements.txt which is standard file for build command at render. 
 
-
+# To put a Flask application into production we need gunicorn library.
