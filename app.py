@@ -49,7 +49,7 @@ JOBS = [
 def hello_world():
   return render_template('home.html', 
                          jobs = JOBS,
-                        company_name = "Eplain")
+                        company_name = "EBAIEE FUTRUZ")
 
 @app.route("/api/jobs")
 def list_jobs():
