@@ -1,5 +1,9 @@
 from flask import Flask ,render_template, jsonify
 
+from database import load_jobs_from_db
+
+from sqlalchemy import text
+
 # Flask is framework for web technologies
 # we are creating an app which is an object in python
 
@@ -8,7 +12,7 @@ from flask import Flask ,render_template, jsonify
 app = Flask(__name__) 
 
 # __name__ returns __main__ function
-
+'''
 JOBS = [
   {
   'id' : 1,
@@ -41,14 +45,16 @@ JOBS = [
   'Salary' : 'US $150,000'
   },
 ]
-
+'''
 
 # next we add a @oject.route(host = 'address', debug = 'True') method to object where the url triggered to other page
 
+  
 @app.route("/") # this is empty page 
 def hello_world():
+  list_of_jobs = load_jobs_from_db()
   return render_template('home.html', 
-                         jobs = JOBS,
+                         jobs = list_of_jobs,
                         company_name = "EBAIEE FUTRUZ")
 
 @app.route("/api/jobs")
