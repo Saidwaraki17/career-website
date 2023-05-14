@@ -59,7 +59,8 @@ def hello_world():
 
 @app.route("/api/jobs")
 def list_jobs():
-  return jsonify(JOBS)
+  jobs = load_jobs_from_db()
+  return jsonify(jobs)
 
 if __name__ == '__main__':
   app.run(host = '0.0.0.0', debug=True) # we need to give a host address 
